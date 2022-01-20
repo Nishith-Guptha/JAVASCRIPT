@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    let s="Thank you so much for contacting us. Dreamland guest relations. You're speaking with Ronaldo. May I have your name, please? Yes, sure. My name is robin soleimani. What is your phone number? It is 9876535362 as mentioned in the book Diary. Thank you so much for providing the info!"
+let ss=s.split(" ")
+let d=[];
+let c=0;
+let k=""
+for(let i=0;i<ss.length;i++){
+  if(ss[i][ss[i].length-1]!="."){
+    k=k+ss[i]+" "
+    k = k.replace(/[0-9]/g, 'X');
+    c=c+1
+  }
+  else{
+    c=c+1
+    if(c>3){
+       k=k+ss[i]
+       d.push(k)
+    }
+    k=""
+    c=0
+  }
+}
+if(k.length>3 && c>3){
+  d.push(k)
+}
+for(let i=0;i<d.length;i++){
+  document.write(`${i+1}. ${d[i]}`)
+  document.write("<br>")
+}
+    </script>
+</body>
+</html>
